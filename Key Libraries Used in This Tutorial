@@ -1,0 +1,7 @@
+pip install pytesseract
+pip install pillow
+!sudo apt install tesseract-ocr
+import pytesseract
+from PIL import Image
+import pandas as pd
+import os
