@@ -67,19 +67,19 @@ filename: Contains the paths of the image files. text: Contains the correspondin
 
 
 
-STEP 3: List of image paths  [Method ONE] #Here, we will be copying and pasting the path of each image, which is possible but would consume much of our time.
+STEP THREE : List of image paths  [Method ONE] #Here, we will be copying and pasting the path of each image, which is possible but would consume much of our time.
 image_paths = [
     "/content/badlayout1.1.png","/content/badlayout4.1.png","/content/badlayout4.5.png"
 
-STEP 4: # Calling the function and getting the DataFrame
+STEP FOUR : # Calling the function and getting the DataFrame
 df = extract_texts(image_paths)
 
-STEP 5: 
+STEP FIVE : 
 # Display the DataFrame
 print(df)
 
 
-STEP 6: 
+STEP SIX : 
 # Save the DataFrame to a CSV file
 df.to_csv('extracted_texts.csv')
 
