@@ -1,37 +1,29 @@
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
-`Extrcating Text from OCR Old Archives`
+# Extracting Text from OCR Old Archives
 
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Extracting Text from OCR Old Archives`
 
-In this **straightforward manual**, I will guide you through the process of extracting **text from OCR old archives**, specifically old scanned newspapers from the past two centuries.
-These archived news pages are saved as images (PNG format).
+In this **straightforward manual**, I will guide you through the process of extracting **text from OCR old archives**, specifically from old scanned newspapers from the past two centuries. These archived news pages are stored as images in PNG format.
 
-Simply put, we will learn how to extract text from these images that textual content from **old archived newspapers**.
+The goal is to learn how to retrieve textual content from **old archived newspapers**.
 
+## Learning Objectives
 
+![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+) `Essential Tools and Libraries`  
+You will learn about the essential packages and libraries for handling OCR, images, and text extraction.
 
-**Learning Objectives**:
+![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+) `Setting Up Your Environment`  
+Discover how to download and set up other required libraries and packages if you are running your code from an online cloud-based platform such as Google Colab. Follow the exact steps to replicate this setup on your end.
 
+![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+) `Single Image Text Extraction`  
+Learn how to extract text from a single image in just two simple, direct steps.
 
-![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
-`You will learn about essential packages and libraries for handling OCR, images, and text extraction.`
+![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+) `Multiple Images Text Extraction`  
+Explore two methods for extracting text from multiple images: one simple method, which may not be recommended depending on your needs, and another more efficient method that allows for the extraction of text into a dataframe. This is ideal for further preprocessing procedures before running any advanced textual analysis.
 
-![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
-`You will discover how to download other required libraries and packages if you are running your code from an online cloud-based platform such as Google Colab. Simply follow the exact steps, and apply them on your end.`
-
-![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
-`You will learn how to extract text from a single image in just two simple direct steps.`
-
-
-![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
-`You will learn how to extract text from multiple images. Here, we will explore two methods: one is easy but not recommended (depending on your needs), and the other is more efficient, allowing you to extract the text into a dataframe for further preprocessing procedures before running any advanced textual analysis`
-
-
-If you have any inquiries or suggestions for alternative methods, please share them with me in the discussion.
-
+If you have any inquiries or suggestions for alternative methods, please share them with me in the discussion section below.
 
 Thanks,
 
 **Mohamed Salama**
 
-
-Reach out at msalama@umd.edu 
+Reach out at msalama@umd.edu
