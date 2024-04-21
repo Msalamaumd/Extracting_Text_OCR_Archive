@@ -2,7 +2,7 @@
 `Extrcating Text from OCR Old Archives`
 
 
-In this short tutorial, I will guide you through the process of extracting text from OCR old archives, specifically old scanned newspapers from the past two centuries.
+In this **Straightforward manual**, I will guide you through the process of extracting text from OCR old archives, specifically old scanned newspapers from the past two centuries.
 These archived news pages are saved as images (PNG format).
 
 Simply put, we will learn how to extract text from these images that contain content from old archived newspapers.
@@ -27,4 +27,6 @@ Learning Objectives:
 If you have any inquiries or suggestions for alternative methods, please share them with me in the discussion.
 
 
-Thanks, Mohamed Salama
+Thanks,
+**Mohamed Salama**
+Reach out at msalama@umd.edu 
