@@ -1,3 +1,7 @@
+    
+
+
+
 #This library is used for OCR [pytesseract]
 pip install pytesseract
 # This library is used image handling
