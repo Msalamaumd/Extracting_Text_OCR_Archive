@@ -18,7 +18,8 @@ Discover how to download and set up other required libraries and packages if you
 Learn how to extract text from a single image in just two simple, direct steps.
 
 ![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+) `Multiple Images Text Extraction`  
-Explore two methods for extracting text from multiple images: one simple method, which may not be recommended depending on your needs, and another more efficient method that allows for the extraction of text into a dataframe. This is ideal for further preprocessing procedures before running any advanced textual analysis.
+Explore two methods for extracting text from multiple images: one simple method, which may not be recommended depending on your needs, and another more efficient method that allows for the extraction of text into a dataframe. 
+This step is ideal for further preprocessing procedures before running any advanced textual analysis.
 
 If you have any inquiries or suggestions for alternative methods, please share them with me in the discussion section.
 
