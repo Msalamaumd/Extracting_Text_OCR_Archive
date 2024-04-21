@@ -67,7 +67,7 @@ filename: Contains the paths of the image files. text: Contains the correspondin
 
 
 
-STEP 3: List of image paths
+STEP 3: List of image paths  [Method ONE] #Here, we will be copying and pasting the path of each image, which is possible but would consume much of our time.
 image_paths = [
     "/content/badlayout1.1.png","/content/badlayout4.1.png","/content/badlayout4.5.png"
 
@@ -90,7 +90,44 @@ df.to_csv('extracted_texts.csv')
 
 
 
+pip install pytesseract
+pip install pillow
+!sudo apt install tesseract-ocr
+import pytesseract
+from PIL import Image
+import pandas as pd
 
+
+# Function to extract text from multiple images and return a DataFrame
+def extract_texts(image_paths):
+    extracted_texts = []
+    filenames = []  
+    for image_path in image_paths:
+        with Image.open(image_path) as img:
+            text = pytesseract.image_to_string(img)
+            extracted_texts.append(text)   
+            filenames.append(image_path) 
+    df = pd.DataFrame({
+        'filename': filenames,
+        'text': extracted_texts
+    })
+    return df
+
+# List of image paths
+image_paths = [
+    "/content/badlayout1.1.png","/content/badlayout4.1.png","/content/badlayout4.5.png"
+]
+
+# Calling the function and getting the DataFrame
+df = extract_texts(image_paths)
+
+# Display the DataFrame
+print(df)
+
+# Save the DataFrame to a CSV file
+df.to_csv('extracted_texts.csv')
+
+##END##
 
 
 
