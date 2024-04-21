@@ -1,4 +1,6 @@
-**Extrcating Text from OCR Old Archives**
+**Extrcating Text from OCR Old Archives** ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
+`Red Text`
+
 
 In this short tutorial, I will guide you through the process of extracting text from OCR old archives, specifically old scanned newspapers from the past two centuries.
 These archived news pages are saved as images (PNG format).
