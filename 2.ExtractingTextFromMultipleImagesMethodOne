@@ -1,102 +1,16 @@
+# Installation Instructions:
+# Install the required Python libraries and system package:
+# pip install pytesseract pillow pandas
+# On Ubuntu/Debian: sudo apt install tesseract-ocr
+# Ensure Python and these packages are installed before running the script.
 
-In this tutorial, we will explore how to extract text from multiple images (method one). ###FULL SCRIPT IS BELOW###
-
-
-In this tutorial, we will use the same packages that were employed in the process of extracting text from a single image.
-Please refer to the script titled '1.ExtractingJustTextFromOneImageOnly.' 
-However, we will only install one additional library to build dataframes (Pandas/pd).
-
-
-STEP ONE: You need to download the following libraries that we will be using here:
-You need to install :
-pip install pytesseract
-pip install pillow
-!sudo apt install tesseract-ocr
-import pytesseract
-from PIL import Image
-import pandas as pd #new
-
-
-#Pandas: Pandas can perform a wide range of data manipulation tasks such as reading and writing different data formats (CSV, Excel, SQL databases, etc.), cleaning data, filtering and selecting data, merging and joining datasets, time series analysis, and much more. 
-It is one of the essential libraries that you will frequently be using in other projects, and it is very common.
-However, in this case, we will use Pandas to build lists and dataframes, enabling us to prepare our data (extracted text) for further analysis.
-
-
-STEP TWO: In this step, we are simply creating a function named extract_texts, designed to extract text from multiple image files and then compile the results into a pandas DataFrame.
-
-# Function to extract text from multiple images and return a DataFrame
-def extract_texts(image_paths): 
-    extracted_texts = []
-    filenames = []  
-    for image_path in image_paths:
-        with Image.open(image_path) as img:
-            text = pytesseract.image_to_string(img)
-            extracted_texts.append(text)   
-            filenames.append(image_path)  
-    df = pd.DataFrame({
-        'filename': filenames,
-        'text': extracted_texts
-    })
-    return df 
-
-
-
-#Explanation of the function mentioned above:
-#1#Function:
-def extract_texts(image_paths): # This function, named `extract_texts`, accepts a parameter called `image_paths`. This parameter is expected to be a list of paths to image files from which text will be extracted.
-    #2#Initializing Lists:
-    extracted_texts = [] #We initialize an empty list to store the text extracted from each image.
-    filenames = []  # We initialize an empty list to store the filenames of the images processed. This helps in tracking which text came from which file.
-    #3#Looping Over Image Paths:
-    for image_path in image_paths: #for image_path in image_paths: starts a loop that iterates over each path in the image_paths list.
-        with Image.open(image_path) as img: # #opens each image using the Image.open() method from the Pillow library (PIL). The with statement is used here for context management, ensuring that each image file is properly closed after its contents are processed.
-          #4#Extracting Text from Images  
-            text = pytesseract.image_to_string(img) #uses the pytesseract library to perform OCR on the image opened as img. The extracted text is stored in the variable text.
-            #5#Storing Results:
-            extracted_texts.append(text) #adds the extracted text to the extracted_texts list.   
-            filenames.append(image_path) #adds the current image's path to the filenames list. 
- #6#Creating a DataFrame:
- df = pd.DataFrame({
-        'filename': filenames,
-        'text': extracted_texts #creates a pandas DataFrame from the two lists. The DataFrame has two columns:
-filename: Contains the paths of the image files. text: Contains the corresponding extracted text from each image.
-    })
-    return df #sends the created DataFrame back to the caller of the function. This DataFrame can then be used for further analysis or display.
-
-
-
-
-
-STEP THREE : List of image paths  [Method ONE] #Here, we will be copying and pasting the path of each image, which is possible but would consume much of our time.
-image_paths = [
-    "/content/badlayout1.1.png","/content/badlayout4.1.png","/content/badlayout4.5.png"
-
-STEP FOUR : # Calling the function and getting the DataFrame
-df = extract_texts(image_paths)
-
-STEP FIVE : 
-# Display the DataFrame
-print(df)
-
-
-STEP SIX : 
-# Save the DataFrame to a CSV file
-df.to_csv('extracted_texts.csv')
-
-
-
-
-             ##### FULL SCRIPT####
-
-
-
-pip install pytesseract
-pip install pillow
-!sudo apt install tesseract-ocr
 import pytesseract
 from PIL import Image
 import pandas as pd
 
+# pytesseract: A Python wrapper for Google's Tesseract-OCR Engine. It enables the recognition and reading of text within images.
+# Pillow: A Python Imaging Library that supports opening, manipulating, and saving many different image file formats.
+# pandas: A powerful data manipulation library that we will use to create and manipulate dataframes for storing OCR results.
 
 # Function to extract text from multiple images and return a DataFrame
 def extract_texts(image_paths):
@@ -105,20 +19,21 @@ def extract_texts(image_paths):
     for image_path in image_paths:
         with Image.open(image_path) as img:
             text = pytesseract.image_to_string(img)
-            extracted_texts.append(text)   
-            filenames.append(image_path) 
-    df = pd.DataFrame({
+            extracted_texts.append(text)
+            filenames.append(image_path)
+    return pd.DataFrame({
         'filename': filenames,
         'text': extracted_texts
     })
-    return df
 
 # List of image paths
 image_paths = [
-    "/content/badlayout1.1.png","/content/badlayout4.1.png","/content/badlayout4.5.png"
+    "/content/badlayout1.1.png", 
+    "/content/badlayout4.1.png", 
+    "/content/badlayout4.5.png"
 ]
 
-# Calling the function and getting the DataFrame
+# Call the function and retrieve the DataFrame
 df = extract_texts(image_paths)
 
 # Display the DataFrame
@@ -126,23 +41,3 @@ print(df)
 
 # Save the DataFrame to a CSV file
 df.to_csv('extracted_texts.csv')
-
-##END##
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
