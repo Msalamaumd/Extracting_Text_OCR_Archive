@@ -1,5 +1,5 @@
-**Extrcating Text from OCR Old Archives** ![#f03c15](https://via.placeholder.com/15/f03c15/000000?Extrcating Text from OCR Old Archives=+)
-`Red Text`
+**Extrcating Text from OCR Old Archives** ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
+`Extrcating Text from OCR Old Archives`
 
 
 In this short tutorial, I will guide you through the process of extracting text from OCR old archives, specifically old scanned newspapers from the past two centuries.
