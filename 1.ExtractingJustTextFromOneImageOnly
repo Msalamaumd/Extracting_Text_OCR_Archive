@@ -1,4 +1,4 @@
-# Use the script below if you want to extract text from a single image in JUST TWO DIRECT STEPS.
+# Use the script below if you want to extract text from a single image in JUST TWO DIRECT STEPS. ###FULL SCRIPT IS DOWN###
 
 STEP ONE: You need to download the following libraries that we will be using here:
 You need to install :
@@ -38,10 +38,20 @@ print(extracted_text)  Ex: print(text)
 
 
 
-###
 
+      ##### FULL SCRIPT####
 
+pip install pytesseract
+pip install pillow
+!sudo apt install tesseract-ocr
+import pytesseract
+from PIL import Image
 
+badlayout_1 = Image.open("/content/badlayout1.1.png")
+text = pytesseract.image_to_string(badlayout_1)
+print(text)
+
+###END###
 
 
 
