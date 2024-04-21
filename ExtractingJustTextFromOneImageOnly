@@ -1,0 +1,13 @@
+#This library is used for OCR [pytesseract]
+pip install pytesseract
+# This library is used image handling
+pip install pillow
+#Tesseract OCR Engine: pytesseract requires a separate installation of the Tesseract OCR Engine. Since we are using Google Colab and not running Python on a Mac processor, I will download it here.
+!sudo apt install tesseract-ocr
+#importing certain libraries to extract and handle text
+import pytesseract
+from PIL import Image
+badlayout_1 = Image.open("/content/badlayout1.1.png")
+#Perform OCR using pytesseract
+text = pytesseract.image_to_string(badlayout_1)
+print(text)
