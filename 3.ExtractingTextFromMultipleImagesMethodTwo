@@ -1,106 +1,51 @@
-In this tutorial, we will explore how to extract text from multiple images (method two). ###FULL SCRIPT IS BELOW###
+# Installation Instructions:
+# Install the required Python libraries and system package:
+# pip install pytesseract pillow pandas
+# On Ubuntu/Debian: sudo apt install tesseract-ocr
+# Ensure Python and these packages are installed before running the script.
 
-In this tutorial, we will use the same packages that were employed in the process of extracting text from a single image or multiple images.
-Please refer to the scripts titled '1.ExtractingJustTextFromOneImageOnly.' and '2.ExtractingTextFromMultipleImagesMethodOne.'
-However, we will only install one additional library to deal with multiple images in a directory. 
-
-
-
-STEP ONE: You need to download the following libraries that we will be using here:
-You need to install :
-pip install pytesseract
-pip install pillow
-!sudo apt install tesseract-ocr
 import pytesseract
 from PIL import Image
-import pandas as pd 
-import os #new 
+import pandas as pd
+import os
 
-#os: is commonly used when you need to interface directly with the operating system or online patform to manage files, directories, and paths, or to access environment settings and execute system commands.
+# pytesseract: A Python wrapper for Google's Tesseract-OCR Engine.
+# Pillow: A Python Imaging Library that supports opening, manipulating, and saving many image formats.
+# pandas: A library for data manipulation and analysis.
+# os: A module that provides a portable way of using operating system-dependent functionality.
 
-
-
-STEP TWO: In this step, we are simply creating a function named extract_texts [This is the same function that we used in method one.]
-
-# Function to extract text from multiple images and return a DataFrame
-def extract_texts(image_paths): 
+# Function to extract text from multiple images and compile results into a DataFrame
+def extract_texts(image_paths):
     extracted_texts = []
     filenames = []  
     for image_path in image_paths:
         with Image.open(image_path) as img:
             text = pytesseract.image_to_string(img)
-            extracted_texts.append(text)   
+            extracted_texts.append(text)
             filenames.append(image_path)  
-    df = pd.DataFrame({
+    return pd.DataFrame({
         'filename': filenames,
         'text': extracted_texts
     })
-    return df 
 
-STEP THREE:
 # Specify the directory containing images
 directory_path = '/path/to/your/image/directory'
 
-STEP FOUR: 
 # List all image files in the directory
 image_paths = [os.path.join(directory_path, file) for file in os.listdir(directory_path) if file.endswith(('.png', '.jpg', '.jpeg'))]
 
-#explanation 
-directory_path: This is a variable that should hold the path to the directory where your images are stored. For example, it might be something like 'C:/Users/YourName/Pictures'.
-os.listdir(directory_path): This function from the os module lists all the files and directories inside the given directory_path. It returns a list of names (strings).
-os.path.join(directory_path, file): This function combines directory_path with each file name, creating a full path for each file. This is necessary because the file names returned by os.listdir() do not include the path, just the file names.
-file.endswith(('.png', '.jpg', '.jpeg')): This checks if the file name ends with any of the specified image file extensions (.png, .jpg, or .jpeg). This is important to ensure that you only process image files.
-List Comprehension [...]: This is a compact way to create a new list. The code inside the brackets is executed for each file in the directory, but only files that are images (as checked by file.endswith) will be included in the new list.
-image_paths: This is the variable where the resulting list of full paths to the image files is stored. Each element in image_paths is a string representing the full path to an image file in the specified directory.
+# Explanation of the list comprehension:
+# directory_path: Path to the directory where your images are stored.
+# os.listdir(directory_path): Lists all files in the specified directory.
+# os.path.join(directory_path, file): Joins the directory path with the file name to create a full path.
+# file.endswith(('.png', '.jpg', '.jpeg')): Filters files to include only images.
+# The result is stored in image_paths, which contains the paths to all image files in the directory.
 
+# Extract text from the images and create a DataFrame
+df = extract_texts(image_paths)
 
-STEP FIVE: 
-# Extract text and create DataFrame
-df_2 = extract_text(image_paths)
+# Display the first few rows of the DataFrame
+print(df.head())
 
-STEP SIX:
-# Now you can save this dataframe or print it
-print(df_2.head())
-
-STEP SEVEN:
-df_2.to_csv('extracted_texts_final.csv')
-
-
-             ### FULL SCRIPT ### 
-
-pip install pytesseract
-pip install pillow
-!sudo apt install tesseract-ocr
-import pytesseract
-from PIL import Image
-import pandas as pd 
-import os 
-
-def extract_texts(image_paths): 
-    extracted_texts = []
-    filenames = []  
-    for image_path in image_paths:
-        with Image.open(image_path) as img:
-            text = pytesseract.image_to_string(img)
-            extracted_texts.append(text)   
-            filenames.append(image_path)  
-    df = pd.DataFrame({
-        'filename': filenames,
-        'text': extracted_texts
-    })
-    return df 
-
-
-directory_path = '/path/to/your/image/directory'
-
-image_paths = [os.path.join(directory_path, file) for file in os.listdir(directory_path) if file.endswith(('.png', '.jpg', '.jpeg'))]
-
-df_2 = extract_text(image_paths)
-
-print(df_2.head())
-
-df_2.to_csv('extracted_texts_final.csv')
-
-###END###
-
-
+# Save the DataFrame to a CSV file
+df.to_csv('extracted_texts_final.csv')
