@@ -20,3 +20,6 @@ import pandas as pd #new
 #Pandas: Pandas can perform a wide range of data manipulation tasks such as reading and writing different data formats (CSV, Excel, SQL databases, etc.), cleaning data, filtering and selecting data, merging and joining datasets, time series analysis, and much more. 
 It is one of the essential libraries that you will frequently be using in other projects, and it is very common.
 However, in this case, we will use Pandas to build lists and dataframes, enabling us to prepare our data (extracted text) for further analysis.
+
+
+STEP TWO: In this step, we are simply creating a function named extract_texts, designed to extract text from multiple image files and then compile the results into a pandas DataFrame.
