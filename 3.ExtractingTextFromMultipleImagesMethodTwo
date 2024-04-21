@@ -6,3 +6,19 @@ However, we will only install one additional library to deal with multiple image
 
 
 
+STEP ONE: You need to download the following libraries that we will be using here:
+You need to install :
+pip install pytesseract
+pip install pillow
+!sudo apt install tesseract-ocr
+import pytesseract
+from PIL import Image
+import pandas as pd 
+import os #new 
+
+#os: is commonly used when you need to interface directly with the operating system or online patform to manage files, directories, and paths, or to access environment settings and execute system commands.
+
+
+
+
+
