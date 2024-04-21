@@ -17,7 +17,7 @@ Learning Objectives:
 `You will discover how to download other required libraries and packages if you are running your code from an online cloud-based platform such as Google Colab. Simply follow the exact steps, and apply them on your end.`
 
 ![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
-`You will learn how to extract text from a single image in just two simple direct steps.'
+`You will learn how to extract text from a single image in just two simple direct steps.`
 
 
 ![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
