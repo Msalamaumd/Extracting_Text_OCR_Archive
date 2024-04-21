@@ -2,7 +2,21 @@
 In this tutorial, we will explore how to extract text from multiple images (method one).
 
 
-In this tutorial, we will use the same packages that were employed in the process of extracting text from a single image. Please refer to the script titled '1.ExtractingJustTextFromOneImageOnly.' 
-However, we will only install one additional library to build dataframes (Panda).
+In this tutorial, we will use the same packages that were employed in the process of extracting text from a single image.
+Please refer to the script titled '1.ExtractingJustTextFromOneImageOnly.' 
+However, we will only install one additional library to build dataframes (Pandas/pd).
 
 
+STEP ONE: You need to download the following libraries that we will be using here:
+You need to install :
+pip install pytesseract
+pip install pillow
+!sudo apt install tesseract-ocr
+import pytesseract
+from PIL import Image
+import pandas as pd #new
+
+
+#Pandas: Pandas can perform a wide range of data manipulation tasks such as reading and writing different data formats (CSV, Excel, SQL databases, etc.), cleaning data, filtering and selecting data, merging and joining datasets, time series analysis, and much more. 
+It is one of the essential libraries that you will frequently be using in other projects, and it is very common.
+However, in this case, we will use Pandas to build lists and dataframes, enabling us to prepare our data (extracted text) for further analysis.
