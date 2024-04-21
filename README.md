@@ -7,7 +7,9 @@ These archived news pages are saved as images (PNG format).
 
 Simply put, we will learn how to extract text from these images that contain content from **old archived newspapers**.
 
-Learning Objectives:
+
+
+**Learning Objectives**:
 
 
 ![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
