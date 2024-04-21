@@ -1,59 +1,31 @@
-# Use the script below if you want to extract text from a single image in JUST TWO DIRECT STEPS. ###FULL SCRIPT IS BELOW###
+# Installation Instructions:
+# You need to install the following libraries and system packages:
+# pip install pytesseract pillow
+# On Ubuntu/Debian: sudo apt install tesseract-ocr
+# Ensure you have Python and these packages installed before running the script.
 
-STEP ONE: You need to download the following libraries that we will be using here:
-You need to install :
-pip install pytesseract
-pip install pillow
-!sudo apt install tesseract-ocr
 import pytesseract
 from PIL import Image
 
-#Pytesseract is a Python wrapper for Google's Tesseract-OCR Engine.
-It will allow Python to recognize and read text embedded in images, which is particulary usseful for readnig text from documents, signs, or any images that contain text. 
+# pytesseract is a Python wrapper for Google's Tesseract-OCR Engine. It allows Python to recognize and read text
+# embedded in images, which is particularly useful for reading text from documents, signs, or any images that contain text.
 
+# Pillow (PIL Fork) is a Python Imaging Library. It adds support for opening, manipulating, and saving many different image
+# file formats. It is necessary because pytesseract needs to interact with images, and Pillow provides the tools to handle
+# image files easily in Python.
 
-#Pillow is a Python Imaging Library (PIL Fork). 
-It adds support for opening, manipulating, and saving many different images file formats. It is ncesary because pytesseract  needs to interact with images, and Pillow provides the tools to handle image files easily in Python. 
+# tesseract-ocr is an open-source text recognition (OCR) Engine. It's used to recognize text from images and it's what
+# pytesseract utilizes under the hood to perform OCR tasks. Installation of this package is crucial as the script will not
+# function without it.
 
+# Define the path to your image
+image_path = "path/to/your/image.png"  # Example: "/content/badlayout1.1.png"
 
-#tesseract-ocr is an open-source text recognition (OCR) Engine [an actual software package]. 
-It's used to recognize text from images and it's what pytesseract utilizes under the hood to perform OCR tasks.
-This command is a must, and if you do not install it, you will encounter errors and be unable to complete the text extraction process.
+# Open the image using Pillow
+image = Image.open(image_path)
 
+# Perform OCR using pytesseract
+extracted_text = pytesseract.image_to_string(image)
 
-#import pytesseract: this  imports the pytesseract library into your script or notebook.Once imported, you can use its functions to perform OCR tasks. 
-
-#from PIL import Image: this imports the Image class from the Pillow library. 
-This class is used to open image files and manipulate images, whih is often ncessary before passing them to pytesseract for text recognition.
-
-STEP TWO: Write your script 
-#Define the path of your image
-variable_name = Image.open("path/to/image.file") Ex: badlayout_1 = Image.open("/content/badlayout1.1.png")
-
-#Perform OCR using pytesseract
-extracted_text = pytesseract.image_to_string(image_variable) Ex: text = pytesseract.image_to_string(badlayout_1)
-
-#Print the outcome 
-print(extracted_text)  Ex: print(text)
-
-
-
-
-      ##### FULL SCRIPT####
-
-pip install pytesseract
-pip install pillow
-!sudo apt install tesseract-ocr
-import pytesseract
-from PIL import Image
-
-badlayout_1 = Image.open("/content/badlayout1.1.png")
-text = pytesseract.image_to_string(badlayout_1)
-print(text)
-
-###END###
-
-
-
-
-Thanks ... Check other scripts if you want to know how to extract text from multiple images.
+# Print the extracted text
+print(extracted_text)
